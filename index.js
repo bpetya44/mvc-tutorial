@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const session = require('express-session');
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 dotenv.config()
@@ -19,6 +20,11 @@ app.set('view engine', 'ejs');
 
 //BodyParsing
 app.use(express.urlencoded({extended: false}));
+app.use(session({
+    secret:'oneboy',
+    saveUninitialized: true,
+    resave: true
+  }));
 
 app.use(passport.initialize())
 app.use(passport.session())
