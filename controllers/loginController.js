@@ -87,6 +87,7 @@ const loginUser = (req, res) => {
 module.exports = {
     registerView,
     loginView,
-    registerUser
+    registerUser,
+    loginUser
 };
 
